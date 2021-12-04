@@ -24,5 +24,15 @@ namespace BulkyBookWeb.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Category model)
+        {
+            _database.Categories.Add(model);
+            _database.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }
