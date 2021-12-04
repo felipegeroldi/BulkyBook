@@ -20,8 +20,9 @@
 <table class="mt-3 table table-bordered table-striped" style="width:100%">
     <thead>
         <tr>
-            <th>Category Name</th>
-            <th>Display Order</th>
+            <th width="50%">Category Name</th>
+            <th width="30%">Display Order</th>
+            <th width="20%"></th>
         </tr>
     </thead>
     <tbody>
@@ -30,6 +31,12 @@
             <tr>
                 <td>@category.Name</td>
                 <td>@category.DisplayOrder</td>
+                <td>
+                    <div class="w-75 btn-group">
+                        <a asp-controller="Category" asp-action="Edit" asp-route-id="@category.Id" class="btn btn-primary"><i class="bi bi-pencil"></i> Edit</a>
+                        <a asp-controller="Category" asp-action="Delete" asp-route-id="@category.Id" class="btn btn-primary"><i class="bi bi-trash"></i> Delete</a>
+                    </div>
+                </td>
             </tr>
         }
     </tbody>
